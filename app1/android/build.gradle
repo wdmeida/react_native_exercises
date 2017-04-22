@@ -2,7 +2,9 @@
 
 buildscript {
     repositories {
-        jcenter()
+        jcenter {
+            url "http://jcenter.bintray.com/"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.3'
@@ -13,12 +15,24 @@ buildscript {
 }
 
 allprojects {
+    tasks.withType(JavaCompile) {
+        options.fork = true
+        options.forkOptions.jvmArgs << '-XaddExports:jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED'
+    }
+    tasks.withType(GroovyCompile) {
+        options.fork = true
+        options.forkOptions.jvmArgs << '-XaddExports:jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED'
+    }
+
     repositories {
         mavenLocal()
-        jcenter()
+        jcenter {
+            url "http://jcenter.bintray.com/"
+        }
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url "$rootDir/../node_modules/react-native/android"
         }
     }
 }
+
