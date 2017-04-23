@@ -1,6 +1,6 @@
 //Import
 import React from 'react';
-import { AppRegistry, Text, View, Image, TouchableOpacity } from 'react-native';
+import { AppRegistry, Alert, Image, Text, TouchableOpacity, View } from 'react-native';
 
 //Formatações
 const Styles = {
@@ -23,6 +23,25 @@ const Styles = {
   }
 };
 
+const getNewPhrase = () => {
+  var randomNumber = Math.floor((Math.random() * 10));
+
+  var phrases = [
+    'Sorria, seu código compila!',
+    'Pra que pagar se posso fazer eu mesmo?',
+    'É só uma alteração pequena.',
+    'Precisa ser feito para ontem!',
+    'O projeto será concluído no prazo.',
+    'O café acabou.',
+    'É um projeot simples, fácil',
+    'Parou de funcionar depois que você mexeu.',
+    'Para entender recursão, devemos primeiro compreender uma recursão.',
+    'O espaço entre a teoria e a prática não é tão grande como é, a teoria na prática.'
+  ];
+
+  Alert.alert(phrases[randomNumber]);
+}//getNewPhrases()
+
 //Cria o componente
 const App = () => {
 
@@ -33,7 +52,9 @@ const App = () => {
 
       <Image source={ require('./imgs/logo.png') } />
       
-      <TouchableOpacity style={ button }>
+      <TouchableOpacity 
+        onPress={getNewPhrase}
+        style={ button }>
         <Text style={ textButton }>Nova frase</Text>
       </TouchableOpacity>
     </View>
