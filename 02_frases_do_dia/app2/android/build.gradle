@@ -15,6 +15,7 @@ buildscript {
 }
 
 allprojects {
+    //Corrigir o erro do JavaTools
     tasks.withType(JavaCompile) {
         options.fork = true
         options.forkOptions.jvmArgs << '-XaddExports:jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED'
