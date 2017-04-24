@@ -12,7 +12,7 @@ const Styles = {
   button: {
     backgroundColor: '#538530',
     paddingVertical: 10,
-    paddignHorizontal: 40,
+    paddingHorizontal: 40,
     marginTop: 20,
     elevation: 3
   },
@@ -33,10 +33,10 @@ const getNewPhrase = () => {
     'Precisa ser feito para ontem!',
     'O projeto será concluído no prazo.',
     'O café acabou.',
-    'É um projeot simples, fácil',
+    'É um projeto simples, fácil.',
     'Parou de funcionar depois que você mexeu.',
-    'Para entender recursão, devemos primeiro compreender uma recursão.',
-    'O espaço entre a teoria e a prática não é tão grande como é, a teoria na prática.'
+    'Para entender recursão, compreenda recursão.',
+    'Não serão necessárias horas extras para terminar.'
   ];
 
   Alert.alert(phrases[randomNumber]);
