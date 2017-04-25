@@ -34,6 +34,7 @@ class app3 extends Component {
 
     let resultado = '';
 
+    // Refatorar depois, apenas para testar a funcionalidade.
     if (escolhaComputador === 'pedra') {
       if (escolhaUsuario === 'pedra') {
         resultado = 'Empate';

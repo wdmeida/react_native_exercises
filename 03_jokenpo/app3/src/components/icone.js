@@ -12,7 +12,7 @@ export default class Icone extends Component {
       return (
         <View style={ styles.icone }>
           <Text style={ styles.txtJogador }>{ this.props.jogador }</Text>
-          <Image  source={ impPedra }/>
+          <Image  source={ imgPedra }/>
         </View>
       )
     } else if (this.props.escolha === 'papel') {
