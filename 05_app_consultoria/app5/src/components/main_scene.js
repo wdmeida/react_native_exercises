@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
     Image,
     StatusBar,
+    StyleSheet,
     View
 } from 'react-native';
 
@@ -21,13 +22,38 @@ export default class MainScene extends Component {
 
                 <TitleBar />
 
-                <Image source={logo} />
-                <Image source={menuClient} />
-                <Image source={menuCompany} />
-                <Image source={menuContact} />
-                <Image source={menuService} />
+                <View style={styles.logo}>
+                    <Image source={logo} />                
+                </View>
+
+                <View style={styles.menu}>
+                    <View style={styles.menuGroup}>
+                        <Image style={styles.imgMenu} source={menuClient} />
+                        <Image style={styles.imgMenu} source={menuCompany} />
+                    </View>
+
+                    <View style={styles.menuGroup}>
+                        <Image style={styles.imgMenu} source={menuContact} />
+                        <Image style={styles.imgMenu} source={menuService} />
+                    </View>
+                </View>
             </View>
         );
     }
 }
 
+const styles = StyleSheet.create({
+    logo: {
+        marginTop: 30,
+        alignItems: 'center'
+    },
+    menu: {
+        alignItems: 'center'
+    },
+    menuGroup: {
+        flexDirection: 'row'
+    },
+    imgMenu: {
+        margin: 15
+    }
+});
