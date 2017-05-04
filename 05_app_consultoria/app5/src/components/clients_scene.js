@@ -18,13 +18,15 @@ const clientTwo = require('../imgs/cliente2.png');
 export default class ClientScene extends Component {
     static navigationOptions = {
         title: 'ATM Consultoria',
-        headerTint: '#CCC'
+        headerTintColor: '#B9C941'
     };
-    
+
     render() {
         return (
-            <View>
-                <StatusBar backgroundColor="#CCC" />
+            <View style={styles.container}>
+               
+                <StatusBar backgroundColor='#B9C941' />
+               
                 <View style={styles.header}>
                     <Image source={detailsClients} />
                     <Text style={styles.headerText}>Nossos Clientes</Text>
@@ -45,6 +47,10 @@ export default class ClientScene extends Component {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#FFF'
+    },
     header: {
         flexDirection: 'row',
         marginTop: 20

@@ -9,29 +9,29 @@ import {
 
 //import TitleBar from './title_bar';
 
-const detailsContacts = require('../imgs/detalhe_contato.png');
+const detailsCompany = require('../imgs/detalhe_empresa.png');
 
-export default class ContactsScene extends Component {
+export default class CompanyScene extends Component {
     static navigationOptions = {
         title: 'ATM Consultoria',
-        headerTintColor: '#61BD8C'
+        headerTintColor: '#EC7148'
     };
 
     render() {
         return (
             <View style={styles.container}>
-               
-                <StatusBar backgroundColor='#61BD8C' />
-               
+                
+                <StatusBar backgroundColor="#EC7148" />
+                
                 <View style={styles.header}>
-                    <Image source={detailsContacts} />
-                    <Text style={styles.headerText}>Contatos</Text>
+                    <Image source={detailsCompany} />
+                    <Text style={styles.headerText}>Empresa</Text>
                 </View>
 
-                <View style={styles.detailsContacts}>
-                    <Text style={styles.txtContacts}>TEL: (11) 1234-1234</Text>
-                    <Text style={styles.txtContacts}>CEL: (11) 91234-1234</Text>
-                    <Text style={styles.txtContacts}>EMAIL: contato@tmconsultoria.com</Text>      
+                <View style={styles.detailsCompany}>
+                    <Text style={styles.txtCompany}>
+                        A ATM Consultoria está no mercado a mais de 20 anos...
+                    </Text>
                 </View>
                
             </View>
@@ -50,15 +50,15 @@ const styles = StyleSheet.create({
     },
     headerText: {
         fontSize: 30,
-        color: '#61BD8C',
+        color: '#EC7148',
         marginLeft: 10,
         marginTop: 25
     },
-    detailsContacts: {
+    detailsCompany: {
         marginTop: 20,
         padding: 20
     },
-    txtContacts: {
+    txtCompany: {
         fontSize: 18
     }
 });

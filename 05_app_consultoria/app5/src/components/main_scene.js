@@ -16,13 +16,14 @@ const menuService = require('../imgs/menu_servico.png');
 export default class MainScene extends Component {
     static navigationOptions = {
         title: 'ATM Consultoria',
-        headerTint: '#CCC'
+        headerTintColor: '#000'
     };
 
     render() {
         const { navigate } = this.props.navigation;
+        
         return (
-            <View>
+            <View style={styles.container}>
                 <StatusBar backgroundColor='#CCC' />
 
                 <View style={styles.logo}>
@@ -33,20 +34,42 @@ export default class MainScene extends Component {
 
                     <View style={styles.menuGroup}>
                         
-                        <TouchableHighlight onPress={() => navigate('Clients')}>
+                        <TouchableHighlight 
+                            onPress={() => navigate('Clients')} 
+                            underlayColor={'#B9C941'} 
+                            activeOpacity={0.3}
+                        >
                             <Image style={styles.imgMenu} source={menuClient} />
                         </TouchableHighlight>
                         
-                        <Image style={styles.imgMenu} source={menuCompany} />
+                        <TouchableHighlight 
+                            onPress={() => navigate('Company')} 
+                            underlayColor={'#EC7148'} 
+                            activeOpacity={0.3} 
+                        >
+                            <Image style={styles.imgMenu} source={menuCompany} />
+                        </TouchableHighlight>
+
                     </View>
 
                     <View style={styles.menuGroup}>
                         
-                        <TouchableHighlight onPress={() => navigate('Contacts')}>
+                        <TouchableHighlight 
+                            onPress={() => navigate('Contacts')} 
+                            underlayColor={'#61BD8C'} 
+                            activeOpacity={0.3} 
+                        >
                             <Image style={styles.imgMenu} source={menuContact} />
                         </TouchableHighlight>
                         
-                        <Image style={styles.imgMenu} source={menuService} />
+                        <TouchableHighlight 
+                            onPress={() => navigate('Services')} 
+                            underlayColor={'#19D1C8'} 
+                            activeOpacity={0.3}
+                        >
+                            <Image style={styles.imgMenu} source={menuService} />
+                        </TouchableHighlight>
+
                     </View>
                 </View>
             </View>
@@ -55,6 +78,10 @@ export default class MainScene extends Component {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#FFF'
+    },
     logo: {
         marginTop: 30,
         alignItems: 'center'

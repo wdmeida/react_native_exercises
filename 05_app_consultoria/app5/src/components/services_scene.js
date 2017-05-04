@@ -9,29 +9,29 @@ import {
 
 //import TitleBar from './title_bar';
 
-const detailsContacts = require('../imgs/detalhe_contato.png');
+const detailsServices = require('../imgs/detalhe_servico.png');
 
-export default class ContactsScene extends Component {
+export default class ServicesScene extends Component {
     static navigationOptions = {
         title: 'ATM Consultoria',
-        headerTintColor: '#61BD8C'
+        headerTintColor: '#19D1C8'
     };
 
     render() {
         return (
             <View style={styles.container}>
                
-                <StatusBar backgroundColor='#61BD8C' />
+                <StatusBar backgroundColor="#19D1C8" />
                
                 <View style={styles.header}>
-                    <Image source={detailsContacts} />
-                    <Text style={styles.headerText}>Contatos</Text>
+                    <Image source={detailsServices} />
+                    <Text style={styles.headerText}>Nossos Serviços</Text>
                 </View>
 
-                <View style={styles.detailsContacts}>
-                    <Text style={styles.txtContacts}>TEL: (11) 1234-1234</Text>
-                    <Text style={styles.txtContacts}>CEL: (11) 91234-1234</Text>
-                    <Text style={styles.txtContacts}>EMAIL: contato@tmconsultoria.com</Text>      
+                <View style={styles.detailsService}>
+                    <Text style={styles.txtService}>Consultoria</Text>
+                    <Text style={styles.txtService}>Processos</Text>
+                    <Text style={styles.txtService}>Acompanhamento de Projetos</Text>      
                 </View>
                
             </View>
@@ -50,15 +50,15 @@ const styles = StyleSheet.create({
     },
     headerText: {
         fontSize: 30,
-        color: '#61BD8C',
+        color: '#19D1C8',
         marginLeft: 10,
         marginTop: 25
     },
-    detailsContacts: {
+    detailsService: {
         marginTop: 20,
         padding: 20
     },
-    txtContacts: {
+    txtService: {
         fontSize: 18
     }
 });
