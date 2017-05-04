@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 
 //Import Components
-import TitleBar from './title_bar';
+//import TitleBar from './title_bar';
 
 //Import images
 const detailsClients = require('../imgs/detalhe_cliente.png');
@@ -16,13 +16,15 @@ const clientOne = require('../imgs/cliente1.png');
 const clientTwo = require('../imgs/cliente2.png');
 
 export default class ClientScene extends Component {
+    static navigationOptions = {
+        title: 'ATM Consultoria',
+        headerTint: '#CCC'
+    };
+    
     render() {
         return (
             <View>
                 <StatusBar backgroundColor="#CCC" />
-
-                <TitleBar />
-
                 <View style={styles.header}>
                     <Image source={detailsClients} />
                     <Text style={styles.headerText}>Nossos Clientes</Text>

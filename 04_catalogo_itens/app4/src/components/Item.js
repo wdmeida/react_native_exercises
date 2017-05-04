@@ -14,7 +14,9 @@ export default class Item extends Component {
                     <Text style={styles.title}>{ this.props.item.titulo }</Text>
                     <Text style={styles.value}>R$ { this.props.item.valor }</Text>
                     <Text style={styles.text}>Local: { this.props.item.local_anuncio }</Text>
-                    <Text style={styles.text}>Data publicação:{ this.props.item.data_publicacao }</Text>                
+                    <Text style={styles.text}>
+                        Data publicação: { this.props.item.data_publicacao }
+                    </Text>                
                 </View>
             </View>
         );

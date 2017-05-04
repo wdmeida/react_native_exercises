@@ -3,10 +3,9 @@ import {
     Image,
     StatusBar,
     StyleSheet,
+    TouchableHighlight,
     View
 } from 'react-native';
-
-import TitleBar from './title_bar';
 
 const logo = require('../imgs/logo.png');
 const menuClient = require('../imgs/menu_cliente.png');
@@ -15,25 +14,38 @@ const menuCompany = require('../imgs/menu_empresa.png');
 const menuService = require('../imgs/menu_servico.png');
 
 export default class MainScene extends Component {
+    static navigationOptions = {
+        title: 'ATM Consultoria',
+        headerTint: '#CCC'
+    };
+
     render() {
+        const { navigate } = this.props.navigation;
         return (
             <View>
-                <StatusBar backgroundColor='#CCC'/>
-
-                <TitleBar />
+                <StatusBar backgroundColor='#CCC' />
 
                 <View style={styles.logo}>
                     <Image source={logo} />                
                 </View>
 
                 <View style={styles.menu}>
+
                     <View style={styles.menuGroup}>
-                        <Image style={styles.imgMenu} source={menuClient} />
+                        
+                        <TouchableHighlight onPress={() => navigate('Clients')}>
+                            <Image style={styles.imgMenu} source={menuClient} />
+                        </TouchableHighlight>
+                        
                         <Image style={styles.imgMenu} source={menuCompany} />
                     </View>
 
                     <View style={styles.menuGroup}>
-                        <Image style={styles.imgMenu} source={menuContact} />
+                        
+                        <TouchableHighlight onPress={() => navigate('Contacts')}>
+                            <Image style={styles.imgMenu} source={menuContact} />
+                        </TouchableHighlight>
+                        
                         <Image style={styles.imgMenu} source={menuService} />
                     </View>
                 </View>
@@ -55,5 +67,9 @@ const styles = StyleSheet.create({
     },
     imgMenu: {
         margin: 15
+    },
+    textHeader: {
+        textAlign: 'center',
+        color: '#000'
     }
 });

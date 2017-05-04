@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
-import { 
-  AppRegistry,
-  View 
-} from 'react-native';
+import { AppRegistry } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
-//import MainScene from './src/components/main_scene';
-import ClientScene from './src/components/client_scene';
+import MainScene from './src/components/main_scene';
+import ClientsScene from './src/components/clients_scene';
+import ContactsScene from './src/components/contacts_scene';
 
-export default class app5 extends Component {
+export default class app5 extends Component { 
   render() {
     return (
-      <View> 
-         <ClientScene />
-      </View>
+        <MainScene />
     );
   }
 }
 
-AppRegistry.registerComponent('app5', () => app5);
+//Register routes app.
+const AppNavigator = StackNavigator({
+  Home: { screen: MainScene },
+  Clients: { screen: ClientsScene },
+  Contacts: { screen: ContactsScene }
+});
+
+AppRegistry.registerComponent('app5', () => AppNavigator);
