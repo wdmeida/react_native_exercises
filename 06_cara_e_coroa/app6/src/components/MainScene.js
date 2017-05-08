@@ -20,7 +20,12 @@ export default class MainScene extends Component {
         
         <View style={styles.showGame}>
           <Image source={logo} />
-          <Image source={btnPlay} />
+
+          <TouchableHighlight
+            onPress={() => { Actions.result(); }}
+          >
+            <Image source={btnPlay} />
+          </TouchableHighlight>
         </View>
 
         <View style={styles.footer}>
