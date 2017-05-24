@@ -5,7 +5,7 @@ import {
     Top,
     Panel,
     Result 
-} from './components'; // './components/index' File index is default
+} from './components/Index'; // './components/index' File index is default
 
 export default props => (
   <View>
