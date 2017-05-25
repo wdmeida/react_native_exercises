@@ -8,7 +8,7 @@ export default props => (
   <TextInput style={styles.number} />
 );
 
-const styles = StyleSheet({
+const styles = StyleSheet.create({
   number: {
     width: 140,
     height: 80,
