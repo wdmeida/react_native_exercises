@@ -10,15 +10,33 @@ class Panel extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { number1: '10', number2: '20' };
+        this.state = { number1: '', number2: '', operation: 'soma' };
        
         this.calculate = this.calculate.bind(this);
         this.updateValue = this.updateValue.bind(this);
+        this.updateOperation = this.updateOperation.bind(this);
     }
 
     calculate() {
-        const result = parseFloat(this.state.number1) + parseFloat(this.props.number2);
-        console.log(result);
+        let result = 0;
+        
+        switch (this.state.operation) {
+            case 'soma':
+                result = parseFloat(this.state.number1) + parseFloat(this.state.number2);     
+            break;
+            case 'subtracao':
+                result = parseFloat(this.state.number1) - parseFloat(this.state.number2);
+            break;
+            case 'divisao':
+                result = parseFloat(this.state.number1) / parseFloat(this.state.number2);
+            break;
+            case 'multiplicacao':
+                result = parseFloat(this.state.number1) * parseFloat(this.state.number2);
+            break;
+            default:
+                result = 0;
+            break;
+        }
     }
 
     updateValue(nameInput, value) {
@@ -26,6 +44,10 @@ class Panel extends Component {
         obj[nameInput] = value;
 
         this.setState(obj);
+    }
+
+    updateOperation(value) {
+        this.setState({ operation: value });
     }
     
     render() {
@@ -36,7 +58,10 @@ class Panel extends Component {
                     number2={this.state.number2} 
                     updateValue={this.updateValue}
                 />
-                <Operation />
+                <Operation 
+                    operation={this.state.operation} 
+                    updateOperation={this.updateOperation} 
+                />
                 <Commands action={this.calculate} />
             </View>
         );
