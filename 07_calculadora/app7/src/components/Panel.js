@@ -10,17 +10,32 @@ class Panel extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { number1: '', number2: '' };
+        this.state = { number1: '10', number2: '20' };
+       
+        this.calculate = this.calculate.bind(this);
+        this.updateValue = this.updateValue.bind(this);
     }
 
     calculate() {
-        console.log('Vamos calculare');
+        const result = parseFloat(this.state.number1) + parseFloat(this.props.number2);
+        console.log(result);
+    }
+
+    updateValue(nameInput, value) {
+        const obj = {};
+        obj[nameInput] = value;
+
+        this.setState(obj);
     }
     
     render() {
         return (
             <View>
-                <Input number1={this.state.number1} number2={this.state.number2} />
+                <Input 
+                    number1={this.state.number1} 
+                    number2={this.state.number2} 
+                    updateValue={this.updateValue}
+                />
                 <Operation />
                 <Commands action={this.calculate} />
             </View>
