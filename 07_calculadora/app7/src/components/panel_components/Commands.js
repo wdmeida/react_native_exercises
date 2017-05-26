@@ -4,5 +4,5 @@ import {
 } from 'react-native';
 
 export default props => (
-  <Button title='Calcular' />
+  <Button title='Calcular' onPress={props.action} />
 );
